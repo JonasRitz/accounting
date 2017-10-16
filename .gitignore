@@ -1,0 +1,9 @@
+# ausgeschlossene Dateien
+# ausgeschlossene Verzeichnisse (mit / beenden)
+# Dateien, die durch ein Muster (*, &) identifiziert werden
+src/application/accounting/*.class
+src/application/.DS_Store
+src/application/accounting/.DS_Store
+*.tar.bz2
+# Dateien, die entgegen dem Muster eingeschlossen werden
+# (durch ! gekennzeichnet)
