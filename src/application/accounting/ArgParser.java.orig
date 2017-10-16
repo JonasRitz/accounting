@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 package application.accounting;
+=======
 /* erklaere die Klasse */
+>>>>>>> 24c43061ae22a33b89f566f2f18ad97a6bd42ee1
 public class ArgParser {
     private String[] args = null;
     private boolean showHelp = false;
