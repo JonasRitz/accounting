@@ -1,5 +1,5 @@
+package application.accounting;
 public class ArgParser {
-
     private String[] args = null;
     private boolean showHelp = false;
     private boolean showVersion = false;
