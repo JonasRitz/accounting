@@ -1,3 +1,4 @@
+/* erklaere die Klasse */
 public class ArgParser {
 
     private String[] args = null;
