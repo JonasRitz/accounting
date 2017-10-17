@@ -1,1 +1,1 @@
-Hier finden sich die Dateien zu Internationalisierung des Projektes.
+Hier befinden sich die Dateien zu Internationalisierung des Projektes.
