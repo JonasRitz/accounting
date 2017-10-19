@@ -1,5 +1,5 @@
 package application.accounting;
-/* erklaere die Klasse */
+/* Kann Argumente parsen */
 public class ArgParser {
     private String[] args = null;
     private boolean showHelp = false;
