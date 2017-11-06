@@ -25,7 +25,8 @@
    <target name="execute-input" depends="compile">
        <java classpath="build/classes"
              classname="application.accounting.Accounting"
-             input="./src/data/test.in">
+             input="./src/data/test.in"
+             output="./src/data/test.csv.new">
        </java>
   </target>
   
@@ -39,7 +40,7 @@
    <target name="execute-params" depends="compile">
        <java classpath="build/classes/"
              classname="application.accounting.Accounting">
-           <arg line="--input-file ./src/data/test.csv -o ./src/data/test/csv.new -l ./src/data/test.csv.log 0,75"/>
+           <arg line="--input-file ./src/data/test.csv -o ./src/data/test.csv.new -l ./src/data/test.csv.log 0,75"/>
        </java>
   </target>
 
