@@ -22,7 +22,27 @@
     <delete dir="dist"/>
   </target>
   
-   <target name="execute-input" depends="compile">
+  
+  <target name="test-set-language-links">
+          <condition property="isNotALangDir">
+              <not>
+                  <available file="./dist/data"
+                             type="dir"/>
+               </not>
+           </condition>
+       </target>
+  
+  <target name="create-language-links"
+          depends="test-set-language-links" if="isNotLangDir">
+          <exec executable="ln"
+                error="/dev/null" os="Linux">
+              <arg line="-sn" />
+              <arg file="./src/data/lang" />
+              <arg file="./dist/data" />
+          </exec>
+          </target>
+  
+  <target name="execute-input" depends="compile">
        <java classpath="build/classes"
              classname="application.accounting.Accounting"
              input="./src/data/test.in"
