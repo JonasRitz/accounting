@@ -11,13 +11,12 @@ import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
 
-
-
 public class Accounting{
   public static double genauigkeit = 1000000.0;
   private static final Logger logger = Logger.getLogger(Accounting.class.getName());
   public static void main(String argv[]) throws FileNotFoundException {
-    String log = "./src/data/log.txt";
+    
+    String log = "test.txt";
     try{
         boolean append = true;
         FileHandler fh = new FileHandler(log, append);
@@ -35,7 +34,7 @@ public class Accounting{
         logger.severe("Datei kann nicht geschrieben werden");
         e.printStackTrace();
     }
-    logger.setLevel(Level.SEVERE);
+    logger.setLevel(Level.ALL);
     
     String datei;
     String zins;

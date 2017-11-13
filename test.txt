@@ -1,0 +1,54 @@
+Mon Nov 13 16:16:14 CET 2017 INFO test
+Mon Nov 13 16:16:39 CET 2017 INFO test
+Mon Nov 13 16:16:39 CET 2017 INFO read from file: ./src/data/test.csv
+Mon Nov 13 16:16:39 CET 2017 INFO gelesene Zeile: #Die Kontost??nde der Mitglieder des Sparvereins "Goldenes Sparschwein"
+Mon Nov 13 16:16:39 CET 2017 INFO gelesene Zeile: 
+Mon Nov 13 16:16:39 CET 2017 INFO gelesene Zeile: 013579;Mustermann;Karl Egon;312,45;5;1,57;201;30,5;360;9,5
+Mon Nov 13 16:16:39 CET 2017 INFO gelesene Zeile: 023678;Musterfrau;Christa;278,77
+Mon Nov 13 16:20:56 CET 2017 INFO test
+Mon Nov 13 16:20:56 CET 2017 INFO read from file: ./src/data/test.csv
+Mon Nov 13 16:20:56 CET 2017 INFO gelesene Zeile: #Die Kontost??nde der Mitglieder des Sparvereins "Goldenes Sparschwein"
+Mon Nov 13 16:20:56 CET 2017 INFO gelesene Zeile: 
+Mon Nov 13 16:20:56 CET 2017 INFO gelesene Zeile: 013579;Mustermann;Karl Egon;312,45;5;1,57;201;30,5;360;9,5
+Mon Nov 13 16:20:56 CET 2017 INFO gelesene Zeile: 023678;Musterfrau;Christa;278,77
+Mon Nov 13 16:21:03 CET 2017 INFO test
+Mon Nov 13 16:21:03 CET 2017 INFO read from file: ./src/data/test.csv
+Mon Nov 13 16:21:03 CET 2017 INFO gelesene Zeile: #Die Kontost??nde der Mitglieder des Sparvereins "Goldenes Sparschwein"
+Mon Nov 13 16:21:03 CET 2017 INFO gelesene Zeile: 
+Mon Nov 13 16:21:03 CET 2017 INFO gelesene Zeile: 013579;Mustermann;Karl Egon;312,45;5;1,57;201;30,5;360;9,5
+Mon Nov 13 16:21:03 CET 2017 INFO gelesene Zeile: 023678;Musterfrau;Christa;278,77
+Mon Nov 13 16:21:15 CET 2017 INFO test
+Mon Nov 13 16:21:15 CET 2017 INFO read from file: ./src/data/test.csv
+Mon Nov 13 16:21:15 CET 2017 INFO gelesene Zeile: #Die Kontost??nde der Mitglieder des Sparvereins "Goldenes Sparschwein"
+Mon Nov 13 16:21:15 CET 2017 INFO gelesene Zeile: 
+Mon Nov 13 16:21:15 CET 2017 INFO gelesene Zeile: 013579;Mustermann;Karl Egon;312,45;5;1,57;201;30,5;360;9,5
+Mon Nov 13 16:21:15 CET 2017 INFO gelesene Zeile: 023678;Musterfrau;Christa;278,77
+Mon Nov 13 16:22:21 CET 2017 INFO test
+Mon Nov 13 16:22:26 CET 2017 INFO test
+Mon Nov 13 16:23:32 CET 2017 INFO test
+Mon Nov 13 16:23:32 CET 2017 INFO read from file: ./src/data/test.csv
+Mon Nov 13 16:23:32 CET 2017 INFO gelesene Zeile: #Die Kontost??nde der Mitglieder des Sparvereins "Goldenes Sparschwein"
+Mon Nov 13 16:23:32 CET 2017 INFO gelesene Zeile: 
+Mon Nov 13 16:23:32 CET 2017 INFO gelesene Zeile: 013579;Mustermann;Karl Egon;312,45;5;1,57;201;30,5;360;9,5
+Mon Nov 13 16:23:32 CET 2017 INFO gelesene Zeile: 023678;Musterfrau;Christa;278,77
+Mon Nov 13 16:26:55 CET 2017 INFO test
+Mon Nov 13 16:26:55 CET 2017 INFO lese von Datei: ./src/data/test.csv
+Mon Nov 13 16:26:55 CET 2017 INFO gelesene Zeile: #Die Kontostände der Mitglieder des Sparvereins "Goldenes Sparschwein"
+Mon Nov 13 16:26:55 CET 2017 INFO gelesene Zeile: 
+Mon Nov 13 16:26:55 CET 2017 INFO gelesene Zeile: 013579;Mustermann;Karl Egon;312,45;5;1,57;201;30,5;360;9,5
+Mon Nov 13 16:26:55 CET 2017 INFO gelesene Zeile: 023678;Musterfrau;Christa;278,77
+Mon Nov 13 16:27:13 CET 2017 INFO lese von Datei: ./src/data/test.csv
+Mon Nov 13 16:27:13 CET 2017 INFO gelesene Zeile: #Die Kontostände der Mitglieder des Sparvereins "Goldenes Sparschwein"
+Mon Nov 13 16:27:13 CET 2017 INFO gelesene Zeile: 
+Mon Nov 13 16:27:13 CET 2017 INFO gelesene Zeile: 013579;Mustermann;Karl Egon;312,45;5;1,57;201;30,5;360;9,5
+Mon Nov 13 16:27:13 CET 2017 INFO gelesene Zeile: 023678;Musterfrau;Christa;278,77
+Mon Nov 13 16:28:01 CET 2017 INFO read from file: ./src/data/test.csv
+Mon Nov 13 16:28:01 CET 2017 INFO gelesene Zeile: #Die Kontost??nde der Mitglieder des Sparvereins "Goldenes Sparschwein"
+Mon Nov 13 16:28:01 CET 2017 INFO gelesene Zeile: 
+Mon Nov 13 16:28:01 CET 2017 INFO gelesene Zeile: 013579;Mustermann;Karl Egon;312,45;5;1,57;201;30,5;360;9,5
+Mon Nov 13 16:28:01 CET 2017 INFO gelesene Zeile: 023678;Musterfrau;Christa;278,77
+Mon Nov 13 16:32:15 CET 2017 INFO read from file: ./src/data/test.csv
+Mon Nov 13 16:32:15 CET 2017 INFO gelesene Zeile: #Die Kontost??nde der Mitglieder des Sparvereins "Goldenes Sparschwein"
+Mon Nov 13 16:32:15 CET 2017 INFO gelesene Zeile: 
+Mon Nov 13 16:32:15 CET 2017 INFO gelesene Zeile: 013579;Mustermann;Karl Egon;312,45;5;1,57;201;30,5;360;9,5
+Mon Nov 13 16:32:15 CET 2017 INFO gelesene Zeile: 023678;Musterfrau;Christa;278,77

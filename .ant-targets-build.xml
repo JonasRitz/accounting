@@ -3,4 +3,5 @@ clean
 compile
 execute-argparser
 execute-input
+execute-params
 init
