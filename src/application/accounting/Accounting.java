@@ -6,6 +6,9 @@ import java.util.logging.Formatter;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 import java.util.logging.Level;
+import java.util.Locale;
+import java.util.MissingResourceException;
+import java.util.ResourceBundle;
 
 
 
@@ -53,7 +56,10 @@ public class Accounting{
             Depositor.setzeZinsen(Double.parseDouble(zins));
         }
         
-        logger.info("lese von Datei: " + datei);
+        String baseName = "Accounting";
+        ResourceBundle rb = ResourceBundle.getBundle(baseName);
+        String readinput_msg = rb.getString("readinput_msg");
+        logger.info(readinput_msg + ": " + datei);
         ArrayList<Depositor> mitglieder = new ArrayList<>();
         try(BufferedReader br = new BufferedReader(new FileReader(datei))){
         String line;
