@@ -7,9 +7,17 @@
     <mkdir dir="dist"/>
   </target>
 
+  <path id="project.class.path">
+      <pathelement location="src/data/lang"/>
+      <pathelement path="${java.class.path}"/>
+      <pathelement path="build/classes"/>
+  </path>
+  
   <target name="compile" depends="init">
-    <javac includeAntRuntime="false" srcdir="src" destdir="build/classes"
-    debug="true" debuglevel="lines,vars,source"/>
+      <javac includeAntRuntime="false" srcdir="src" destdir="build/classes"
+             debug="true" debuglevel="lines,vars,source">
+          <classpath refid="project.class.path"/>
+        </javac>
   </target>
 
   <target name="archive" depends="compile">
@@ -22,28 +30,8 @@
     <delete dir="dist"/>
   </target>
   
-  
-  <target name="test-set-language-links">
-          <condition property="isNotALangDir">
-              <not>
-                  <available file="./dist/data"
-                             type="dir"/>
-               </not>
-           </condition>
-       </target>
-  
-  <target name="create-language-links"
-          depends="test-set-language-links" if="isNotLangDir">
-          <exec executable="ln"
-                error="/dev/null" os="Linux">
-              <arg line="-sn" />
-              <arg file="./src/data/lang" />
-              <arg file="./dist/data" />
-          </exec>
-          </target>
-  
   <target name="execute-input" depends="compile">
-       <java classpath="build/classes"
+       <java classpathref="project.class.path"
              classname="application.accounting.Accounting"
              input="./src/data/test.in"
              output="./src/data/test.csv.new">
@@ -51,17 +39,47 @@
   </target>
   
   <target name="execute-argparser" depends="compile">
-       <java classpath="build/classes/"
+       <java classpathref="project.class.path"
              classname="application.accounting.ArgParser">
            <arg line="--input-file ./src/data/test.csv -o ./src/data/test/csv.new -l ./src/data/test.csv.log 0,75"/>
        </java>
   </target>
   
    <target name="execute-params" depends="compile">
-       <java classpath="build/classes/"
+       <java classpathref="project.class.path"
              classname="application.accounting.Accounting">
            <arg line="--input-file ./src/data/test.csv -o ./src/data/test.csv.new -l ./src/data/test.csv.log 0,75"/>
        </java>
   </target>
+  
+  
+  <target name="execute-jar" depends="archive">
+       <java classpathref="project.class.path"
+             classname="application.accounting.Accounting">
+             <arg line="--input-file ./src/data/test.csv -o ./src/data/test.csv.new -l ./src/data/test.csv.log 0,75"/>
+       </java>
+  </target>
+  
+    
+  <target name="test-set-language-links">
+          <condition property="isNotALangDir">
+              <not>
+                <available file="./dist/data"
+                           type="dir"/>
+               </not>
+           </condition>
+       </target>
+  
+  <target name="create-language-links"
+          depends="test-set-language-links" if="isNotALangDir">
+          <exec executable="ln"
+                error="/dev/null" os="Linux">
+              <arg line="-sn" />
+              <arg file="src/data/lang" />
+              <arg file="./dist/data" />
+          </exec>
+    </target>
+    
+    
 
 </project>
