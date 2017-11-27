@@ -74,7 +74,30 @@
           </exec>
     </target>
     
+    <!-- be: logging -->
+    <target name="execute-logging"
+            description="executes the application with a given logging level"
+            depends="compile">
+        <echo file="./build/classes/accounting_logging.properties"  append="false">
+            handlers= java.util.logging.ConsoleHandler
+            .level= ${level}
 
-    
+            java.util.logging.FileHandler.pattern = %h/java%u.log
+            java.util.logging.FileHandler.limit = 50000
+            java.util.logging.FileHandler.count = 1
+            java.util.logging.FileHandler.formatter = java.util.logging.SimpleFormatter
+
+            java.util.logging.ConsoleHandler.level = ${level}
+            java.util.logging.ConsoleHandler.formatter = java.util.logging.SimpleFormatter
+
+            com.xyz.foo.level = SEVERE
+        </echo>
+        <java classpath="build/classes"
+              classname="application.accounting.Accounting"
+              input="src/data/test.in"
+              fork="true">
+            <jvmarg value="-Djava.util.logging.config.file=./build/classes/accounting_logging.properties"/>
+        </java>
+    </target>
 
 </project>

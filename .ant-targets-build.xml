@@ -1,9 +1,1 @@
-archive
-clean
-compile
-create-language-links
-execute-argparser
-execute-input
-execute-params
-init
-test-set-language-links
+execute-logging
