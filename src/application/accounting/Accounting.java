@@ -78,17 +78,29 @@ public class Accounting{
         while( (line=br.readLine()) != null){
             logger.info("gelesene Zeile: " + line);
             if( line.length() != 0 && line.charAt(0) >= '0' && line.charAt(0) <='9'){
-            Depositor aktuell;
-            String values[] = line.split(";");
-            ArrayList<AccountingEntry> liste = new ArrayList<>();
-            double start = Double.parseDouble(values[3].replace(',','.'));
-            aktuell = new Depositor(values[0], values[1], values[2], (long) (start*genauigkeit), liste);
-            for(int i=4; i<values.length-1; i+=2){
-                double d = Double.parseDouble(values[i+1].replace(',','.'));
-                aktuell.einzahlen(Integer.parseInt(values[i]), (long)(d*genauigkeit));
-            }
-            aktuell.berechneGuthaben(aktuell.getZins());
-            mitglieder.add(aktuell);
+                try{
+                    Depositor aktuell;
+                    String values[] = line.split(";");
+                    ArrayList<AccountingEntry> liste = new ArrayList<>();
+                    double start = Double.parseDouble(values[3].replace(',','.'));
+                    if(start<0){
+                        logger.warning("Der Kontostand ist negativ");
+                    }
+                    aktuell = new Depositor(values[0], values[1], values[2], (long) (start*genauigkeit), liste);
+                    for(int i=4; i<values.length-1; i+=2){
+                        double d = Double.parseDouble(values[i+1].replace(',','.'));
+                        if(d<0){
+                            logger.warning("Die Einzahlung ist negativ");
+                        }  
+                        aktuell.einzahlen(Integer.parseInt(values[i]), (long)(d*genauigkeit));
+                    }
+                    aktuell.berechneGuthaben(aktuell.getZins());
+                    mitglieder.add(aktuell);
+                    
+                }catch(ArrayIndexOutOfBoundsException e){
+                    logger.warning("Falsches Format der Zeile");
+                    System.exit(-1);
+                }
             }else{
                 bw.write(line+"\n");
             }

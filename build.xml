@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <project name="accounting" default="archive">
-
+    
   <target name="init">
     <mkdir dir="build/classes"/>
     <mkdir dir="dist"/>
@@ -26,7 +26,7 @@
         basedir="build/classes"/>
   </target>
 
-  <target name="clean" depends="init">
+  <target name="clean" depends="delete-language-links">
     <delete dir="build"/>
     <delete dir="dist"/>
   </target>
@@ -74,6 +74,21 @@
           </exec>
     </target>
     
+    <target name="delete-language-links"
+            depends="test-remove-language-links" if="isADir">
+        <exec executable="rm" error="/dev/null" os="Linux">
+                  <arg file="./dist/data/lang" />
+              </exec>
+          </target>
+          
+    <target name="test-remove-language-links">
+        <condition property="isADir">
+            <available file="./dist/data/lang" type="dir" />
+        </condition>
+    </target>
+    
+    
+    
     <!-- be: logging -->
     <target name="execute-logging"
             description="executes the application with a given logging level"
@@ -81,12 +96,10 @@
         <echo file="./build/classes/accounting_logging.properties"  append="false">
             handlers= java.util.logging.ConsoleHandler
             .level= ${level}
-
             java.util.logging.FileHandler.pattern = %h/java%u.log
             java.util.logging.FileHandler.limit = 50000
             java.util.logging.FileHandler.count = 1
             java.util.logging.FileHandler.formatter = java.util.logging.SimpleFormatter
-
             java.util.logging.ConsoleHandler.level = ${level}
             java.util.logging.ConsoleHandler.formatter = java.util.logging.SimpleFormatter
 
@@ -100,4 +113,23 @@
         </java>
     </target>
 
+    <target name="create-test-script"
+            depends="archive"
+            description="executes the error cases">
+            <echo file="test_error.sh" append="false">
+            for elem in `ls ./src/data/test_err*.in`
+            do 
+                echo &quot;./src/data/`basename $elem .in`.out&quot;
+                java -cp &quot;./dist/data/lang:./dist/accounting.jar:${CLASSPATH}&quot; application.accounting.Accounting -i $elem -o &quot;./src/data/`basename $elem .in`.out&quot; 0,75
+            done
+        </echo>
+        
+         <exec executable="/bin/bash">
+             <arg value="test_error.sh"/>
+             </exec>
+             
+         <exec executable="rm" error="/dev/null" os="Linux">
+            <arg file="test_error.sh" />
+         </exec>
+        </target>
 </project>
