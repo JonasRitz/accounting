@@ -2,6 +2,19 @@
 
 <project name="accounting" default="archive">
     
+    <target name="help" description="Shows purpose of the programm (German)">
+        <echo>
+            Dieses Programm dient der Verwaltung eines Sparbuchs.
+            In einer Textdatei werden die Daten gespeichert und 
+            hinterlegt und automatisch mit Hilfe der Beitraege des
+            Jahres das Guthaben verzinst berechnet.
+            
+            Das Projekt "accounting" zeigt verschiedene Schritte und
+            Taetigkeiten, die bei der Durchfuehrung eines Projektes
+            durchzufuehren sind.
+        </echo>
+    </target>
+    
   <target name="init">
     <mkdir dir="build/classes"/>
     <mkdir dir="dist"/>
@@ -21,7 +34,8 @@
         </javac>
   </target>
 
-  <target name="archive" depends="compile">
+  <target name="archive" depends="compile"
+          description="creates an executable .jar-archive">
     <jar destfile="dist/accounting.jar"
         basedir="build/classes"/>
   </target>
@@ -47,14 +61,13 @@
   </target>
   
   
-  <target name="execute-jar" depends="archive">
+  <target name="execute-jar" depends="archive"
+          description="Executes the application from the .jar archive">
        <java classpathref="project.class.path"
              classname="application.accounting.Accounting">
              <arg line="--input-file ./src/data/test.csv -o ./src/data/test.csv.new -l ./src/data/test.csv.log 0,75"/>
        </java>
   </target>
-  
-    
   <target name="test-set-language-links" depends="init">
           <condition property="isNotALangDir">
               <not>
@@ -72,9 +85,9 @@
               <arg file="src/data/lang" />
               <arg file="./dist/data/lang" />
           </exec>
-    </target>
+  </target>
     
-    <target name="delete-language-links"
+  <target name="delete-language-links"
             depends="test-remove-language-links" if="isADir">
         <exec executable="rm" error="/dev/null" os="Linux">
                   <arg file="./dist/data/lang" />
@@ -132,4 +145,5 @@
             <arg file="test_error.sh" />
          </exec>
         </target>
+        
 </project>
