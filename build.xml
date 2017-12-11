@@ -13,6 +13,9 @@
             Taetigkeiten, die bei der Durchfuehrung eines Projektes
             durchzufuehren sind.
         </echo>
+         <java classname="org.apache.tools.ant.Main">
+            <arg value="-projecthelp" />
+        </java>
     </target>
     
   <target name="init">
@@ -20,7 +23,8 @@
     <mkdir dir="dist"/>
     <mkdir dir="dist/data"/>
   </target>
-
+  
+  
   <path id="project.class.path">
       <pathelement location="src/data/lang"/>
       <pathelement path="${java.class.path}"/>
